@@ -1,0 +1,40 @@
+// circles.js
+
+function setup() {
+    createCanvas(600, 600);
+    noLoop();
+}
+
+function draw() {
+    background(240);
+    stroke(0);
+    noFill();
+
+    // first square
+    drawSquare(width / 2, height / 2, 200);
+}
+
+// recursive function
+function drawSquare(x, y, size) {
+    // stop when square is too small
+    if (size < 10) return;
+
+    // draw new square
+    rectMode(CENTER);
+    rect(x, y, size, size);
+
+    // draw small squares on corners
+    const newSize = size * 0.5; 
+
+    // top left corner
+    drawSquare(x - size / 2, y - size / 2, newSize);
+
+    // top right corner
+    drawSquare(x + size / 2, y - size / 2, newSize);
+
+    // bottom left corner
+    drawSquare(x - size / 2, y + size / 2, newSize);
+
+    // bottom right corner
+    drawSquare(x + size / 2, y + size / 2, newSize);
+}
