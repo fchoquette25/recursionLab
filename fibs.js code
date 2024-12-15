@@ -1,4 +1,4 @@
-// Memoized Fibonacci Sequence
+// fibs.js
 
 // store calculated fib numbers
 // Base cases: fib(0) = 0, fib(1) = 1
